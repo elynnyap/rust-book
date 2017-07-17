@@ -49,4 +49,16 @@ fn main() {
 
     println!("Two plus one is {}", plus_one(Some(2)));
     println!("None plus one is {}", plus_one(None));
+    
+    let some_value = Some(3);
+    if let Some(3) = some_value {
+        println!("three!");
+    } else {
+        println!("not three!");
+    }
+    //the above if-let-else block is the same as the following match block
+    match some_value {
+        Some(3) => println!("three!"),
+        _ => println!("not three!"),
+    }
 }
