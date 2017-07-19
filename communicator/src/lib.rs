@@ -9,7 +9,13 @@ pub mod network;
 
 #[cfg(test)]
 mod tests {
+    // we use super to move up one level in the hierarchy
+    // currently we are in the module tests
+    use super::client;
+
     #[test]
     fn it_works() {
+        // alternatively we can do ::client::connect()
+        client::connect();
     }
 }
