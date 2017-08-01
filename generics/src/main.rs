@@ -2,6 +2,10 @@ use std::cmp::PartialOrd;
 
 // define a generic function that returns the largest element in a list 
 // where the list can be composed of any type of elements
+// we need to specify PartialOrd as a traits bounds to use > operator
+// we need Copy trait bc we need to be able to move the value out of list[0]
+// and into the 'largest' variable
+// (Copy trait: elements that have a known size at compile-time so they can be stored on stack)
 fn largest<T: PartialOrd + Copy>(list: &[T]) -> T {
     let mut largest = list[0];
 
